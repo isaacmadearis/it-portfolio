@@ -242,12 +242,10 @@
   @keyframes blink{ 50%{ opacity:0; } }
   @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.4; } }
 
-  @media (max-width: 640px){
-    nav.topnav .wrap{ flex-wrap:wrap; height:auto; padding-top:10px; padding-bottom:10px; }
-    .nav-brand{ display:none; }
-    .nav-links{ width:100%; justify-content:center; }
-    .hero{ padding:44px 0 38px; }
-    .cert-date{ margin-left:0; width:100%; }
+ @media (max-width: 640px){
+    nav.topnav .wrap{ flex-wrap:wrap; height:auto; padding-top:12px; padding-bottom:12px; gap:10px; }
+    .nav-brand{ font-size:14px; }
+    .nav-links{ width:100%; justify-content:center; gap:14px; }
   }
 
   @media (prefers-reduced-motion: reduce){
