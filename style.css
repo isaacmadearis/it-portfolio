@@ -55,7 +55,6 @@
     transition: color .2s ease;
   }
   .nav-brand:hover{ color: var(--text-bright); }
-  .nav-brand .dot{ color: var(--led); }
   .nav-links{ display:flex; gap:6px; list-style:none; flex-wrap:wrap; }
   .nav-links a{
     display:block; font-family: var(--font-display);
@@ -161,6 +160,8 @@
   .phase-num{ font-family: var(--font-display); font-size:12px; color: var(--text-dim); letter-spacing:0.08em; }
   .card h3{ font-family: var(--font-display); font-size:16px; font-weight:700; color: var(--text-bright); margin-bottom:9px; }
   .card p{ font-size:13px; color: var(--text-dim); line-height:1.65; margin-bottom:16px; flex:1; }
+  .card p a{ color: var(--accent); }
+  .card p a:hover{ text-decoration:underline; }
   .stack{
     font-family: var(--font-display); font-size:11px; color: var(--text-dim);
     letter-spacing:0.03em; margin-bottom:16px; opacity:.85;
