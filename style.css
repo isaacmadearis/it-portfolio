@@ -52,7 +52,9 @@
   .nav-brand{
     font-family: var(--font-display); font-size:13px; font-weight:700;
     color: var(--text-dim); white-space:nowrap;
+    transition: color .2s ease;
   }
+  .nav-brand:hover{ color: var(--text-bright); }
   .nav-brand .dot{ color: var(--led); }
   .nav-links{ display:flex; gap:6px; list-style:none; flex-wrap:wrap; }
   .nav-links a{
