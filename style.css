@@ -56,12 +56,6 @@
   }
   .nav-brand:hover{ color: var(--text-bright); }
   .nav-brand .dot{ color: var(--led); }
-  .home-arrow{
-    display:inline-block; margin-left:6px; color: var(--accent);
-    opacity:0; transform: translateY(2px);
-    transition: opacity .2s ease, transform .2s ease;
-  }
-  .nav-brand:hover .home-arrow{ opacity:1; transform: translateY(0); }
   .nav-links{ display:flex; gap:6px; list-style:none; flex-wrap:wrap; }
   .nav-links a{
     display:block; font-family: var(--font-display);
