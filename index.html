@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaac Madearis — IT Support → Cloud Engineer</title>
+<meta name="description" content="Isaac Madearis — IT Support Specialist and Cloud &amp; Network Engineering student. Documented ThinkPad T430 homelab: Docker, Cloudflare Zero Trust, Caddy TLS, Tailscale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="wrap">
+      <span class="nav-brand"><span class="dot">●</span> isaac@it-portfolio</span>
+      <ul class="nav-links">
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#certifications">certifications</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="prompt-line">isaac@t430-homelab:~$ <span class="cmd">whoami</span></div>
+      <h1>ISAAC MADEARIS</h1>
+      <div class="role">IT Support → Cloud Engineer</div>
+      <p class="lede">
+        Three years administering Salesforce CRM and resolving technical issues at a
+        <strong>95% ticket resolution rate</strong>, now paired with an active homelab
+        built on a repurposed ThinkPad T430 running headless Ubuntu Server — Docker
+        containers, Cloudflare Zero Trust tunnels, custom TLS ingress with Caddy, and
+        every deployment documented in GitHub. Currently pursuing a
+        <strong>B.S. in Cloud and Network Engineering (AWS)</strong> at Western Governors University.
+      </p>
+      <div class="prompt-line output">&gt; status: infrastructure online, documented, and growing<span class="cursor">_</span></div>
+
+      <div class="status-bar">
+        <span class="status-item"><span class="led"></span> STATUS: OPEN TO IT SUPPORT / CLOUD ROLES</span>
+        <span class="status-item">LOCATION: <span class="val">Kansas City, MO</span></span>
+        <span class="status-item">HOST: <span class="val">Lenovo ThinkPad T430</span></span>
+        <span class="status-item">OS: <span class="val">Ubuntu Server (headless)</span></span>
+      </div>
+    </header>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="section-label">projects</div>
+      <div class="section-title">Hands-on infrastructure</div>
+      <p class="section-intro">
+        Two tracks: self-directed infrastructure engineering on the t430 homelab, and
+        professional IT support work. Every homelab phase links to documented evidence —
+        configs, bash scripts, and before/after audits — in the GitHub repository.
+      </p>
+
+      <div class="subgroup-label">Cloud &amp; Infrastructure — t430-homelab</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 01</span></div>
+          <h3>Hardened Base OS</h3>
+          <p>Ubuntu Server locked down with UFW explicit allow rules and ACPI overrides so the laptop runs 24/7 headless in clamshell mode without sleeping.</p>
+          <div class="stack">Ubuntu Server · UFW · ACPI · Bash</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/01-hardened-base-os" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 02</span></div>
+          <h3>WordPress + MySQL Stack</h3>
+          <p>Multi-tier web app deployed via Docker Compose with a WordPress front-end and MySQL backend on an isolated bridge network. Secrets externalized to a gitignored .env — no plaintext credentials in version control. Live at wp.madearlabs.com.</p>
+          <div class="stack">Docker Compose · WordPress · MySQL 8.0 · DLP practices</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/02-wordpress-mysql" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 03</span></div>
+          <h3>Cloudflare Zero Trust Tunnel</h3>
+          <p>Public HTTPS access through an outbound-only cloudflared tunnel — zero inbound ports opened on the home network and no firewall exposure to the public internet.</p>
+          <div class="stack">Cloudflare Zero Trust · cloudflared · DNS</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/03-cloudflare-tunnel" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 04</span></div>
+          <h3>Caddy + DNS-01 TLS</h3>
+          <p>Compiled a custom Caddy v2 binary with xcaddy and the Cloudflare DNS plugin to automate Let's Encrypt certs via DNS-01 challenge — no inbound port 80/443 required. API token injected through a secured systemd EnvironmentFile. Serves casa.madearlabs.com over the Tailscale mesh.</p>
+          <div class="stack">Caddy v2 · xcaddy · Let's Encrypt · systemd · Go</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/04-caddy-dns01-tls" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 05</span></div>
+          <h3>Tailscale Mesh VPN</h3>
+          <p>Flat encrypted WireGuard mesh connecting the server, laptops, and phone for secure remote administration from anywhere — no port forwarding, no public SSH.</p>
+          <div class="stack">Tailscale · WireGuard · ACLs</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/05-tailscale-mesh" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 06</span></div>
+          <h3>GPG Commit Signing</h3>
+          <p>Every commit cryptographically signed with an Ed25519 GPG key and verified end-to-end over headless SSH sessions — a documented chain of custody on the repo.</p>
+          <div class="stack">GPG · Ed25519 · Git · SSH</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/06-gpg-signing" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">PHASE 07</span></div>
+          <h3>SSH Hardening</h3>
+          <p>Password authentication disabled, key-only logins enforced, and SSH bound to the Tailscale interface only — with before/after audit evidence committed to the repo.</p>
+          <div class="stack">OpenSSH · Tailscale · Auditing</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab/tree/main/docs/portfolio/07-ssh-hardening" target="_blank" rel="noopener noreferrer">View Evidence <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">STORAGE</span></div>
+          <h3>Cross-Platform NAS (Samba)</h3>
+          <p>Samba-based NAS on Ubuntu Server enabling file sharing across macOS, iOS, and Linux clients. Share access restricted by user credential rather than IP, with a version-controlled smb.conf template for reproducibility.</p>
+          <div class="stack">Samba · SMB · User-level auth</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab" target="_blank" rel="noopener noreferrer">View Repository <span class="arrow">→</span></a>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="wip-tag">[ WIP ]</span><span class="phase-num">IN PROGRESS</span></div>
+          <h3>Self-Hosted Cloud — Nextcloud</h3>
+          <p>Nextcloud with a MariaDB backend, both containers on an isolated Docker network with no direct host port exposure. Planned public access via Cloudflare Zero Trust at nextcloud.madearlabs.com with hardened trusted_domains and HTTPS overwrite settings; all credentials sourced from .env.</p>
+          <div class="stack">Nextcloud · MariaDB · Docker Compose · Cloudflare Zero Trust</div>
+          <a class="evidence-btn" href="https://github.com/isaacmadearis/t430-homelab" target="_blank" rel="noopener noreferrer">View Repository <span class="arrow">→</span></a>
+        </div>
+
+      </div>
+
+      <div class="subgroup-label">IT Support &amp; Operations Experience</div>
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ CURRENT ]</span><span class="phase-num">JUL 2025 – PRESENT</span></div>
+          <h3>Physical Security Officer — Data Center Operations</h3>
+          <p>Securitas Security Services USA, Kansas City, MO. Safeguard a live enterprise data center by monitoring surveillance systems and controlling physical access around the clock. Document and escalate incidents so facility logs meet compliance standards, and coordinate entry procedures with operations staff — zero unauthorized access on monitored shifts.</p>
+          <div class="stack">Data center ops · Access control · Incident documentation · Compliance</div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">AUG 2022 – FEB 2025</span></div>
+          <h3>Tier 1 &amp; Tier 2 Technical Support</h3>
+          <p>SnapIT Solutions, Overland Park, KS. Delivered Tier 1 and Tier 2 support to a Salesforce environment, resolving roughly 3 tickets per week at a 95% resolution rate with minimal escalation. Documented standard operating procedures to make the support experience consistent and repeatable.</p>
+          <div class="stack">Ticketing · Troubleshooting · SOP documentation · End-user training</div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="ok-tag">[ OK ]</span><span class="phase-num">LIFECYCLE</span></div>
+          <h3>User Access &amp; Data Integrity Management</h3>
+          <p>Partnered with leadership to set user permissions, manage profiles, and maintain data integrity across leads, contacts, and accounts throughout the full org lifecycle — the CRM-side equivalent of identity and access management.</p>
+          <div class="stack">Permissions · Profiles · Data hygiene · IAM fundamentals</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section id="certifications">
+      <div class="section-label">certifications</div>
+      <div class="section-title">Credentials</div>
+      <p class="section-intro">All credentials below are earned and independently verifiable.</p>
+
+      <div class="cert-list">
+
+        <div class="cert">
+          <span class="cert-name">LPI Linux Essentials</span>
+          <span class="cert-issuer">Linux Professional Institute · no expiration</span>
+          <a class="verify-link" href="https://cs.lpi.org/caf/Xamman/certification/verify/LPI000679777/8hfeycfhcq" target="_blank" rel="noopener noreferrer">Verify →</a>
+          <span class="cert-date">JAN 2026</span>
+        </div>
+
+        <div class="cert">
+          <span class="cert-name">Google IT Support Professional Certificate</span>
+          <span class="cert-issuer">Google · Coursera</span>
+          <a class="verify-link" href="https://coursera.org/share/01f7da1d4bd0c5d32ac0618a09674ccf" target="_blank" rel="noopener noreferrer">Verify →</a>
+          <span class="cert-date">FEB 2025</span>
+        </div>
+
+        <div class="cert">
+          <span class="cert-name">Salesforce Certified Administrator</span>
+          <span class="cert-issuer">Salesforce</span>
+          <a class="verify-link" href="https://www.salesforce.com/trailblazer/imadearis" target="_blank" rel="noopener noreferrer">Verify →</a>
+          <span class="cert-date">SEP 2024</span>
+        </div>
+
+        <div class="cert">
+          <span class="cert-name">Salesforce Certified Associate</span>
+          <span class="cert-issuer">Salesforce</span>
+          <a class="verify-link" href="https://www.salesforce.com/trailblazer/imadearis" target="_blank" rel="noopener noreferrer">Verify →</a>
+          <span class="cert-date">2024</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="section-label">about</div>
+      <div class="section-title">The path into cloud</div>
+      <div class="about">
+        <div class="about-text">
+          <p>
+            I'm a <strong>Salesforce Certified Administrator moving into cloud computing and IT support</strong>.
+            Years of building flows, dashboards, and CRM fixes showed me how much I enjoy setting up
+            systems that make people's jobs easier.
+          </p>
+          <p>
+            That pulled me toward infrastructure. I repurposed a ThinkPad T430 into a headless Ubuntu
+            Server and used it to learn Linux sysadmin work the way it actually gets done — Docker
+            containers, TLS I had to compile a custom binary to get working, a mesh VPN instead of open
+            ports, and signed commits on every configuration change. Every phase is documented in
+            <strong>GitHub</strong> with bash setup scripts and config templates, because infrastructure
+            nobody can reproduce isn't really infrastructure.
+          </p>
+          <p>
+            I'm currently pursuing a <strong>B.S. in Cloud and Network Engineering (AWS)</strong> at
+            Western Governors University, expected March 2030, while working data center operations at
+            Securitas. I'm open to <strong>IT support or cloud roles — remote or hybrid</strong>. If you
+            need someone with CRM experience, real Linux practice, and a growing cloud background,
+            let's connect.
+          </p>
+        </div>
+        <div class="about-facts">
+          <div><span>location</span><span>Kansas City, MO</span></div>
+          <div><span>current</span><span>Data Center Ops<br>Securitas</span></div>
+          <div><span>studying</span><span>B.S. Cloud &amp;<br>Network Eng (WGU)</span></div>
+          <div><span>graduating</span><span>March 2030</span></div>
+          <div><span>seeking</span><span>IT Support · Cloud</span></div>
+          <div><span>work type</span><span>Remote · Hybrid</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="section-label">contact</div>
+      <div class="section-title">Get in touch</div>
+      <p class="section-intro">Fastest way to reach me is email. Everything else is linked below.</p>
+      <div class="contact-grid">
+        <a class="contact-btn primary" id="emailBtn" href="#"><span class="proto">mailto:</span><span id="emailText">…</span></a>
+        <a class="contact-btn" href="https://www.linkedin.com/in/isaac-madearis/" target="_blank" rel="noopener noreferrer"><span class="proto">linkedin/</span>isaac-madearis</a>
+        <a class="contact-btn" href="https://github.com/isaacmadearis" target="_blank" rel="noopener noreferrer"><span class="proto">github/</span>isaacmadearis</a>
+        <!-- CUSTOMIZE: replace href with a link to your hosted resume PDF -->
+        <a class="contact-btn" href="https://resume.isaacmadearis.com" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left">
+        <div class="footer-line"><strong>it.isaacmadearis.com</strong></div>
+        <div class="footer-line">t430-homelab · 7 documented phases · Ubuntu Server · Kansas City, MO</div>
+      </div>
+      <div class="footer-btns">
+        <a class="repo-btn" href="https://github.com/isaacmadearis/t430-homelab" target="_blank" rel="noopener noreferrer">Full Repository</a>
+        <a class="cross-link" href="https://salesforce.isaacmadearis.com">View Salesforce Portfolio →</a>
+      </div>
+    </footer>
+
+  </div>
+
+<script>
+(function() {
+  /* ---- Email obfuscation: assembled at runtime, never in the HTML source ---- */
+  var btn  = document.getElementById('emailBtn');
+  var text = document.getElementById('emailText');
+  if (btn && text) {
+    var user = ['isaac', 'madearis'].join('');
+    var dom  = ['gmail', 'com'].join('.');
+    var addr = user + '\u0040' + dom;
+    text.textContent = addr;
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'mai' + 'lto:' + addr;
+    });
+  }
+
+  /* ---- Active nav link on scroll ---- */
+  var links = document.querySelectorAll('.nav-links a');
+  var sections = document.querySelectorAll('section[id]');
+  if (links.length && sections.length && 'IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          links.forEach(function(l) {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function(s) { obs.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
